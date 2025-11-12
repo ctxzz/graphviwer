@@ -17,6 +17,15 @@ export function Editor({ value, onChange, language }: EditorProps) {
           value={value}
           onChange={(value) => onChange(value || "")}
           theme="vs-dark"
+          loading={
+            <div className="flex items-center justify-center h-full">
+              <p className="text-muted-foreground">Loading editor...</p>
+            </div>
+          }
+          onMount={(editor) => {
+            // Editor mounted successfully
+            editor.focus();
+          }}
           options={{
             minimap: { enabled: false },
             fontSize: 14,

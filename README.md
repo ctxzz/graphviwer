@@ -15,6 +15,16 @@ A modern web-based viewer for **Graphviz** and **Mermaid** diagrams, built with 
 - 🌓 **Dark Mode Ready**: Supports dark mode theming
 - 📱 **Responsive Design**: Works on desktop and mobile devices
 
+## ⚠️ Important Notice
+
+**This is a publicly accessible tool.** Anyone with the URL can access and use it.
+
+**Privacy & Security:**
+- ✅ All data stays in your browser (localStorage only)
+- ✅ No server-side data transmission or logging
+- ⚠️ Do NOT enter sensitive information (passwords, API keys, personal data, confidential information)
+- 💡 For extra privacy, use incognito/private browsing mode
+
 ## Tech Stack
 
 - **Frontend**: React 19 + TypeScript
