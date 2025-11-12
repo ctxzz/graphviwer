@@ -17,7 +17,6 @@ To enable automatic deployment to GitHub Pages, follow these steps:
 3. **Push to Trigger Deployment**
    - The workflow automatically runs when you push to:
      - `main` branch
-     - `claude/new-feature-implementation-011CV3mqT9kYCto1DVs3oZHX` branch
    - You can also manually trigger it from the Actions tab
 
 4. **Access Your Site**
