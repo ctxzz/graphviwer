@@ -25,8 +25,6 @@ A modern web-based viewer for **Graphviz** and **Mermaid** diagrams, built with 
 - ⚠️ Do NOT enter sensitive information (passwords, API keys, personal data, confidential information)
 - 💡 For extra privacy, use incognito/private browsing mode
 
-See [SECURITY.md](./SECURITY.md) for detailed security information.
-
 ## Tech Stack
 
 - **Frontend**: React 19 + TypeScript
@@ -186,8 +184,6 @@ This application implements several security measures to protect against XSS att
 - **localStorage only**: All data stays on your device, nothing is sent to servers
 
 ⚠️ **Security Notice**: Only render diagrams from trusted sources. While we sanitize output, always be cautious with code from unknown sources.
-
-For detailed security information, see [SECURITY.md](./SECURITY.md).
 
 ## License
 
