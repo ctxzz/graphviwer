@@ -59,9 +59,9 @@ export function Preview({ code, type }: PreviewProps) {
           </div>
         )}
         {error && (
-          <Alert variant="destructive">
-            <AlertDescription>{error}</AlertDescription>
-          </Alert>
+          <div className="flex items-center justify-center h-full">
+            <p className="text-sm text-destructive">{error}</p>
+          </div>
         )}
         {!isLoading && !error && svg && (
           <div

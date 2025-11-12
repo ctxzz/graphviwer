@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Info } from "lucide-react";
 import { Editor } from "@/components/Editor";
 import { Preview } from "@/components/Preview";
 import { Toolbar } from "@/components/Toolbar";
@@ -103,14 +101,6 @@ function App() {
             </CardDescription>
           </CardHeader>
         </Card>
-
-        <Alert className="mb-4">
-          <Info className="h-4 w-4" />
-          <AlertDescription>
-            <strong>Privacy Notice:</strong> This is a publicly accessible tool. All data stays in your browser's localStorage only.
-            Do not enter sensitive information (passwords, API keys, personal data).
-          </AlertDescription>
-        </Alert>
 
         <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as "graphviz" | "mermaid")}>
           <TabsList className="mb-4">

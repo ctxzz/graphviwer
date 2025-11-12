@@ -8,7 +8,8 @@ export function initMermaid() {
       startOnLoad: false,
       theme: "default",
       securityLevel: "loose",
-      fontFamily: "monospace",
+      fontFamily: "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+      fontSize: 16,
     });
     isInitialized = true;
   }
