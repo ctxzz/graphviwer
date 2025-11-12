@@ -4,6 +4,8 @@
 
 This document outlines the security measures implemented in the Graphviz & Mermaid Viewer application.
 
+**⚠️ Important: This is a publicly accessible tool hosted on GitHub Pages. Anyone with the URL can access and use it. Please do not enter sensitive, confidential, or personal information into this application.**
+
 ## XSS (Cross-Site Scripting) Protection
 
 ### SVG Sanitization
@@ -53,6 +55,13 @@ For production, consider using nonces or hashes for a stricter CSP.
 **Privacy:**
 - All data remains on the user's device
 - Users can clear localStorage through browser settings
+- **No server-side logging**: Since this is a static site, there is no server-side data collection
+
+**⚠️ Public Access Considerations:**
+- This tool is publicly accessible - anyone can visit and use it
+- While your data stays in your browser, others using the same browser profile could potentially access localStorage
+- For sensitive diagrams, consider using a private/incognito browser session
+- Never input confidential information, credentials, or personal data into diagrams
 
 ## Dependencies
 
@@ -77,6 +86,9 @@ npm audit fix
 1. **Don't paste untrusted code** - Only render diagrams from trusted sources
 2. **Be cautious with shared diagrams** - Verify the source before rendering
 3. **Review before downloading** - Check SVG output before downloading
+4. **No sensitive information** - Never input passwords, API keys, personal data, or confidential business information
+5. **Public tool awareness** - Remember this is a publicly accessible tool; treat all inputs as potentially visible to others on your device
+6. **Use private browsing** - For extra privacy, use incognito/private mode which doesn't persist localStorage
 
 ### For Developers
 
