@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import DOMPurify from "dompurify";
 import { Card, CardContent } from "@/components/ui/card";
-import { Alert, AlertDescription } from "@/components/ui/alert";
 import { renderGraphviz } from "@/lib/graphvizRenderer";
 import { renderMermaid } from "@/lib/mermaidRenderer";
 
