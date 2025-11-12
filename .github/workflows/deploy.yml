@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - claude/new-feature-implementation-011CV3mqT9kYCto1DVs3oZHX
   workflow_dispatch:
 
 permissions:
