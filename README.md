@@ -117,9 +117,26 @@ npm run preview
 
 ## Deployment
 
-### GitHub Pages
+### Automatic Deployment (GitHub Actions)
 
-Deploy to GitHub Pages:
+This project includes a GitHub Actions workflow that automatically builds and deploys to GitHub Pages.
+
+**Setup:**
+1. Go to your repository Settings → Pages
+2. Under "Source", select **GitHub Actions**
+3. Push to `main` or your feature branch to trigger automatic deployment
+
+The workflow runs on:
+- Push to `main` branch
+- Push to `claude/new-feature-implementation-011CV3mqT9kYCto1DVs3oZHX` branch
+- Manual trigger from Actions tab
+
+**Your site will be available at:**
+`https://<username>.github.io/graphviwer/`
+
+### Manual Deployment
+
+Alternatively, deploy manually using npm:
 ```bash
 npm run deploy
 ```
