@@ -1,73 +1,164 @@
-# React + TypeScript + Vite
+# Graphviz & Mermaid Viewer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web-based viewer for **Graphviz** and **Mermaid** diagrams, built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 📊 **Dual Rendering Engines**: Support for both Graphviz DOT and Mermaid diagram syntax
+- 🎨 **Modern UI**: Clean interface built with Shadcn UI and Tailwind CSS
+- ✏️ **Monaco Editor**: Professional code editor with syntax highlighting
+- 🔄 **Real-time Preview**: Instant visualization as you type
+- 💾 **Auto-save**: Automatic localStorage persistence
+- 📥 **Export**: Download diagrams as SVG files
+- 📋 **Copy to Clipboard**: Quick code copying functionality
+- 🎯 **Sample Templates**: Pre-loaded examples to get started quickly
+- 🌓 **Dark Mode Ready**: Supports dark mode theming
+- 📱 **Responsive Design**: Works on desktop and mobile devices
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: React 19 + TypeScript
+- **Build Tool**: Vite
+- **UI Framework**: Tailwind CSS + Shadcn UI
+- **Editor**: Monaco Editor
+- **Graphviz Rendering**: @hpcc-js/wasm
+- **Mermaid Rendering**: mermaid
+- **Icons**: lucide-react
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js 18+ and npm
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd graphviwer
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Install dependencies:
+```bash
+npm install
 ```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+## Usage
+
+### Graphviz Tab
+Write your DOT language code in the editor to create:
+- Flowcharts
+- State diagrams
+- UML diagrams
+- Network topologies
+- And more...
+
+Example:
+```dot
+digraph G {
+  rankdir=LR;
+  node [shape=box, style=rounded];
+
+  A [label="Start"];
+  B [label="Process"];
+  C [label="Decision"];
+  D [label="End"];
+
+  A -> B;
+  B -> C;
+  C -> D [label="Yes"];
+  C -> B [label="No"];
+}
+```
+
+### Mermaid Tab
+Create diagrams using Mermaid syntax:
+- Flowcharts
+- Sequence diagrams
+- Gantt charts
+- Class diagrams
+- And more...
+
+Example:
+```mermaid
+graph TD
+    A[Start] --> B{Is it working?}
+    B -->|Yes| C[Great!]
+    B -->|No| D[Debug]
+    D --> B
+    C --> E[End]
+```
+
+### Toolbar Functions
+- **Sample**: Insert a sample diagram
+- **Clear**: Clear the editor
+- **Copy Code**: Copy current code to clipboard
+- **Download SVG**: Export diagram as SVG file
+
+## Building for Production
+
+Build the project:
+```bash
+npm run build
+```
+
+Preview the production build:
+```bash
+npm run preview
+```
+
+## Deployment
+
+### GitHub Pages
+
+Deploy to GitHub Pages:
+```bash
+npm run deploy
+```
+
+This will build the project and publish to the `gh-pages` branch.
+
+## Project Structure
+
+```
+graphviwer/
+├── src/
+│   ├── components/
+│   │   ├── ui/          # Shadcn UI components
+│   │   ├── Editor.tsx   # Code editor component
+│   │   ├── Preview.tsx  # Diagram preview component
+│   │   └── Toolbar.tsx  # Toolbar component
+│   ├── lib/
+│   │   ├── graphvizRenderer.ts  # Graphviz rendering logic
+│   │   ├── mermaidRenderer.ts   # Mermaid rendering logic
+│   │   └── utils.ts             # Utility functions
+│   ├── App.tsx          # Main application component
+│   ├── main.tsx         # Application entry point
+│   └── index.css        # Global styles
+├── public/              # Static assets
+├── package.json
+└── vite.config.ts       # Vite configuration
+```
+
+## License
+
+This project is open source and available under the MIT License.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Acknowledgments
+
+- [Graphviz](https://graphviz.org/) - Graph visualization software
+- [Mermaid](https://mermaid.js.org/) - Diagram and flowchart generation
+- [Shadcn UI](https://ui.shadcn.com/) - Re-usable components
+- [Monaco Editor](https://microsoft.github.io/monaco-editor/) - Code editor
