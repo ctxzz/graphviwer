@@ -17,7 +17,7 @@ export function initMermaid() {
 export async function renderMermaid(mermaidCode: string): Promise<string> {
   try {
     initMermaid();
-    // Generate valid CSS ID (no dots, starts with letter)
+    // Generate unique CSS ID with valid prefix ("mermaid-" starts with letter), followed by timestamp and random string (which may start with a digit)
     const randomId = Math.random().toString(36).substring(2, 15);
     const id = `mermaid-${Date.now()}-${randomId}`;
     const { svg } = await mermaid.render(id, mermaidCode);
