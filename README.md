@@ -175,8 +175,6 @@ This application implements several security measures to protect against XSS att
 
 ⚠️ **Security Notice**: Only render diagrams from trusted sources. While we sanitize output, always be cautious with code from unknown sources.
 
-For detailed security information, see [SECURITY.md](./SECURITY.md).
-
 ## License
 
 This project is open source and available under the MIT License.
