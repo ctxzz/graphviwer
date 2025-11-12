@@ -138,7 +138,6 @@ This project includes a GitHub Actions workflow that automatically builds and de
 
 The workflow runs on:
 - Push to `main` branch
-- Push to `claude/new-feature-implementation-011CV3mqT9kYCto1DVs3oZHX` branch
 - Manual trigger from Actions tab
 
 **Your site will be available at:**
