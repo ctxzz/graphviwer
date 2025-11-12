@@ -138,7 +138,6 @@ This project includes a GitHub Actions workflow that automatically builds and de
 
 The workflow runs on:
 - Push to `main` branch
-- Push to `claude/new-feature-implementation-011CV3mqT9kYCto1DVs3oZHX` branch
 - Manual trigger from Actions tab
 
 **Your site will be available at:**
@@ -180,7 +179,7 @@ graphviwer/
 This application implements several security measures to protect against XSS attacks:
 
 - **SVG Sanitization**: All rendered SVGs are sanitized using DOMPurify
-- **Content Security Policy**: CSP headers configured to restrict resource loading
+- **Content Security Policy**: CSP meta tag configured to restrict resource loading
 - **localStorage only**: All data stays on your device, nothing is sent to servers
 
 ⚠️ **Security Notice**: Only render diagrams from trusted sources. While we sanitize output, always be cautious with code from unknown sources.
