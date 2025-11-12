@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - claude/new-feature-implementation-011CV3mqT9kYCto1DVs3oZHX
+      - main
   workflow_dispatch:
 
 permissions:
