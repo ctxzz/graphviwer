@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import DOMPurify from "dompurify";
 import { Card, CardContent } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { renderGraphviz } from "@/lib/graphvizRenderer";
@@ -32,7 +33,11 @@ export function Preview({ code, type }: PreviewProps) {
         } else {
           renderedSvg = await renderMermaid(code);
         }
-        setSvg(renderedSvg);
+        // Sanitize SVG to prevent XSS attacks
+        const sanitized = DOMPurify.sanitize(renderedSvg, {
+          USE_PROFILES: { svg: true, svgFilters: true },
+        });
+        setSvg(sanitized);
       } catch (err) {
         setError(err instanceof Error ? err.message : String(err));
         setSvg("");
