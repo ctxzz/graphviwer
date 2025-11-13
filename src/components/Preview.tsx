@@ -35,6 +35,8 @@ export function Preview({ code, type }: PreviewProps) {
         // Sanitize SVG to prevent XSS attacks
         const sanitized = DOMPurify.sanitize(renderedSvg, {
           USE_PROFILES: { svg: true, svgFilters: true },
+          ADD_TAGS: ['foreignObject'],
+          ADD_ATTR: ['target'],
         });
         setSvg(sanitized);
       } catch (err) {
